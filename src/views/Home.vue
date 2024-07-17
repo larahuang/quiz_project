@@ -18,7 +18,9 @@
             </button>
             <div class="subject">{{ item.name }}
             </div>
-            <button @click.prevent="addCart(item)" class="bg-red rounded-lg py-2 hover:blur-sm focus:blur-sm">
+            <button @click.prevent="addCart(item)"
+                class="bg-red rounded-lg py-2 hover:shadow-lg focus:shadow-lg "
+                :class="{ disabled: item.status === '尚未開始' || item.status === '已結束' }">
                 {{ item.price }} {{ item.status }}
                 <i class="fa-solid fa-cart-shopping"></i>
             </button>
@@ -29,32 +31,17 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
-import { listsType } from '../type/cart'
+import { useCartStore } from '../stores/cart';
+const storeCart = useCartStore();
+const { lists, cartLists } = storeToRefs(storeCart);
+const { getProducts, addCart } = storeCart;
 // import db from './db.json'
 const title = ref<string>('列表')
 
-const lists = ref<listsType[]>([]);
-const addCartLists = ref<any[]>([]);
-const getProducts = async () => {
-    try {
-        const api = 'https://script.google.com/macros/s/AKfycbyGmoZukCQze0nw3UF-VX9ELODVy5Rs6CIQ1U-YbwNHfG3JIjGz4JThKAvWJB1P0qTg/exec';
-        await axios.get(api)
-            .then((res) => {
-                lists.value = res.data;
-                console.log(res)
-            })
 
-    } catch (error) {
-        console.log(error)
-    }
-}
-const cartlists = ref<listsType[]>([]);
-const addCart = (item:any) => {
-    cartlists.value.push(item);
 
-}
 onMounted(() => {
     getProducts();
 })

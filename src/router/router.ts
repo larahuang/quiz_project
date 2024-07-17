@@ -5,7 +5,8 @@ import {createRouter,createWebHistory,RouterOptions,Router,
 import Layout from '../layouts/Layout.vue';
 const routes: Array<RouteRecordRaw> = [
      {
-      path: '/',
+    path: '/',
+       redirect: '/index',
       component: Layout,
       children: [
         {
