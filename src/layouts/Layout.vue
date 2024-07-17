@@ -1,16 +1,22 @@
 
 
 <template>
-<div>
-<ul>
-<li v-for="item in lists" :key="item.title">
-   <router-link :to="item.href">
-     {{item.title}}
-   </router-link> 
-</li>
-</ul>
+    <div class="flex justify-start md:justify-between">
+        <div class="col-start-2 col-span-4">
+            <a>Lara</a>
 
-</div>
+        </div>
+        <div class="col-start-2 col-span-4">
+            <ul>
+                <li v-for="item in lists" :key="item.title">
+                    <router-link :to="item.href">
+                        {{ item.title }}
+                    </router-link>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <router-view></router-view>
 </template>
 
 <script setup lang="ts">

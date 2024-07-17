@@ -1,0 +1,51 @@
+body{
+    background-color: #333;
+    color:#ffff;
+}
+i{
+     color:#ffff;
+}
+#app{
+    height: 100vh;
+    
+}
+ul{
+    list-style: none;
+    display: flex;
+    li{
+        list-style: none;
+         display: flex;
+         margin: 10px;
+    }
+}
+.bg-sky-500 {
+    background-color: #673AB7;
+}
+
+.grid{
+    .flex{
+        padding: 15px ;
+    }
+    img{
+        margin: auto;
+    }
+    .subject{
+        color:#333;
+    }
+    .icon-cart{
+         color:#333;
+    }
+    .bg-pink{
+     background-color: #ed0594;
+    }
+    .bg-other{
+     background-color: #0b7c22;
+    }
+     .bg-red{
+     background-color: #f52101;
+     i{
+        color:#ffff;
+     }
+     
+    }
+}

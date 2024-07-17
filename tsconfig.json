@@ -22,10 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny":false,
     "allowJs":true,
-    "types": [
-      "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
-    ]
+ 
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
