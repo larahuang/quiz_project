@@ -1,9 +1,9 @@
 
 
 <template>
-  <div>
- <router-view />
-  </div>
+<div>
+{{title}}
+</div>
 </template>
 
 <script setup lang="ts">
