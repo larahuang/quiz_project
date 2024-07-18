@@ -179,7 +179,9 @@ i{
    font-size: 20px;
 
 }
+@media screen and  (max-width:991px){
 
+}
 
 @media screen and  (max-width:768px){
     .grid-cols-5 {
@@ -206,6 +208,21 @@ i{
         grid-template-columns: repeat(2, minmax(0, 1fr));
         width: 80%;
         margin: auto;
+    }
+     .col-start-2{
+        &:first-child{
+            display: none;
+        }
+    }
+    .col-span-4{
+       margin-left:50%;
+    }
+}
+@media screen and  (max-width:676px){
+    .grid-cols-5 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 70%;
+        margin: 5%;
     }
 }
 @media screen and  (max-width:480px){
