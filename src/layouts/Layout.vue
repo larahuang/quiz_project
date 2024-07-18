@@ -8,7 +8,8 @@
         </div>
         <div class="col-start-2 col-span-4">
             <ul class="nav">
-                <li v-for="item in navLists" :key="item.title">
+                <li v-for="(item,index) in navLists" :key="item.title" :class="menuActive == index ? 'isActive' : ''"
+                    @click="menuClickActive(index)">
                     <router-link :to="item.href">
                         {{ item.title }}
                     </router-link>
@@ -16,14 +17,14 @@
                 <li>
                     <i @click.prevent="openCartLists" class="fa-solid fa-cart-shopping"></i>
                     <span>{{ cartLists.length }}</span>
-                    
+
                 </li>
             </ul>
 
         </div>
     </div>
-    
-   
+
+
     <router-view></router-view>
 </template>
 
@@ -42,5 +43,9 @@ const navLists = ref<navListType[]>([
     {title:'列表',href:'/index'},
     {title:'購物車',href:'/shop_cart'},
 ])
+const menuActive = ref<number | any>(0)
+const menuClickActive = (index: number | any) => {
+    menuActive.value = index;
+}
 </script>
 

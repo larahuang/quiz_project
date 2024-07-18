@@ -17,9 +17,9 @@
                 {{ item.displayCategory }}
             </button>
             <div class="subject">{{ item.name }}
+              
             </div>
-            <button @click.prevent="addCart(item)"
-                class="bg-red rounded-lg py-2 hover:shadow-lg focus:shadow-lg "
+            <button @click.prevent="addCart(item)" class="bg-red rounded-lg py-2 hover:shadow-lg focus:shadow-lg "
                 :class="{ disabled: item.status === '尚未開始' || item.status === '已結束' }">
                 {{ item.price }} {{ item.status }}
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -33,6 +33,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { ref, onMounted } from 'vue'
+import moment from 'moment'
 import { useCartStore } from '../stores/cart';
 const storeCart = useCartStore();
 const { lists, cartLists } = storeToRefs(storeCart);
