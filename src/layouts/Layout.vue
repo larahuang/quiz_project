@@ -1,7 +1,7 @@
 
 
 <template>
-    <div class="flex justify-start md:justify-between">
+    <div class="flex justify-start md:justify-between menu">
         <div class="col-start-2 col-span-4">
             <a>Lara</a>
 
